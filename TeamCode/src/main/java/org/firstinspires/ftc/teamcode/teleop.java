@@ -8,13 +8,15 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class teleop extends LinearOpMode {
 
     Drive driveTeleOp = new Drive();
+    Lift_Mecanizm lift_mecanizmTeleOp = new Lift_Mecanizm();
+
 
     @Override
     public void runOpMode() throws InterruptedException {
 
-        driveTeleOp.leftliner.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        driveTeleOp.leftliner.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        driveTeleOp.leftliner.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        lift_mecanizmTeleOp.leftliner.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        lift_mecanizmTeleOp.leftliner.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        lift_mecanizmTeleOp.leftliner.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         waitForStart();
 
 
@@ -23,16 +25,16 @@ public class teleop extends LinearOpMode {
         driveTeleOp.backleft.setPower(gamepad1.right_stick_y + -gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
         driveTeleOp.topright.setPower(-gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
         driveTeleOp.backright.setPower(gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 + gamepad1.right_stick_x);
-        driveTeleOp.leftliner.setPower(gamepad2.right_stick_y);
-        driveTeleOp.intake.setPower(-gamepad2.left_stick_y);
+        lift_mecanizmTeleOp.leftliner.setPower(gamepad2.right_stick_y);
+        lift_mecanizmTeleOp.intake.setPower(-gamepad2.left_stick_y);
 
         if (gamepad2.a){
-            driveTeleOp.arm.setPosition(1);
+            lift_mecanizmTeleOp.arm.setPosition(1);
 
         }
 
         if (gamepad2.b){
-            driveTeleOp.arm.setPosition(-1);
+            lift_mecanizmTeleOp.arm.setPosition(-1);
 
         }
     }

@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 public class Auto extends LinearOpMode {
 
    Drive driveAuto = new Drive();
+   Lift_Mecanizm lift_mecanizmAuto = new Lift_Mecanizm();
 
    @Override
    public void runOpMode() throws InterruptedException {

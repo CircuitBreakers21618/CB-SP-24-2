@@ -12,12 +12,7 @@ public class Drive{
     public DcMotor topright;
     public DcMotor backleft;
     public DcMotor backright;
-    public DcMotor leftliner;
-    public DcMotor intake;
 
-
-
-    public Servo arm;
 
     public Drive(){
 
@@ -25,11 +20,7 @@ public class Drive{
         backleft = hardwaremap.get(DcMotor.class, "backleft");
         topright = hardwaremap.get(DcMotor.class, "topright");
         backright = hardwaremap.get(DcMotor.class, "backright");
-        leftliner = hardwaremap.get(DcMotor.class, "leftliner");
-        intake = hardwaremap.get(DcMotor.class, "intake");
 
-
-        arm = hardwaremap.get(Servo.class, "arm");
 
 
     }
