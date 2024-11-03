@@ -2,34 +2,37 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name = "SP Teleop", group = "2024-25 SP")
 public class teleop extends LinearOpMode {
 
-    Drive drive = new Drive();
+    Drive driveTeleOp = new Drive();
 
     @Override
     public void runOpMode() throws InterruptedException {
 
-        motor.setmode()
+        driveTeleOp.leftliner.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        driveTeleOp.leftliner.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        driveTeleOp.leftliner.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         waitForStart();
 
 
 
-        drive.topleft.setPower(-gamepad1.right_stick_y + -gamepad1.left_stick_x * 1.1 + gamepad1.right_stick_x);
-        drive.backleft.setPower(gamepad1.right_stick_y + -gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
-        drive.topright.setPower(-gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
-        drive.backright.setPower(gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 + gamepad1.right_stick_x);
-        drive.leftliner.setPower(gamepad2.right_stick_y);
-        drive.intake.setPower(-gamepad2.left_stick_y);
+        driveTeleOp.topleft.setPower(-gamepad1.right_stick_y + -gamepad1.left_stick_x * 1.1 + gamepad1.right_stick_x);
+        driveTeleOp.backleft.setPower(gamepad1.right_stick_y + -gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
+        driveTeleOp.topright.setPower(-gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 -gamepad1.right_stick_x);
+        driveTeleOp.backright.setPower(gamepad1.right_stick_y + gamepad1.left_stick_x * 1.1 + gamepad1.right_stick_x);
+        driveTeleOp.leftliner.setPower(gamepad2.right_stick_y);
+        driveTeleOp.intake.setPower(-gamepad2.left_stick_y);
 
         if (gamepad2.a){
-            drive.arm.setPosition(1);
+            driveTeleOp.arm.setPosition(1);
 
         }
 
         if (gamepad2.b){
-            drive.arm.setPosition(-1);
+            driveTeleOp.arm.setPosition(-1);
 
         }
     }
