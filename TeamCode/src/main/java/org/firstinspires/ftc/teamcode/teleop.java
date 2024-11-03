@@ -9,6 +9,7 @@ public class teleop extends LinearOpMode {
 
     Drive driveTeleOp = new Drive();
     Lift_Mecanizm lift_mecanizmTeleOp = new Lift_Mecanizm();
+    //calls instilization of motors and servos
 
 
     @Override
