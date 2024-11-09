@@ -11,7 +11,7 @@ public class LineraMecanizme {
     public CRServo arm;
 
     public void init(HardwareMap hwMap){
-        Intake = hwMap.get(DcMotor.class, "intake");
+        Intake = hwMap.get(DcMotor.class, "Intake");
         leftliner = hwMap.get(DcMotor.class, "leftliner");
         arm = hwMap.get(CRServo.class, "arm");
         leftliner.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

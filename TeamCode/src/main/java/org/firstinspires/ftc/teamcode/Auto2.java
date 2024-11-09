@@ -12,6 +12,7 @@ public class Auto2 extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
 
         driveAuto.init(hardwareMap);
+        //geting hardwareMap
         waitForStart();
 
         moveforward(1, 220);
