@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import static java.lang.Thread.sleep;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -18,13 +20,13 @@ public class Drive2 {
         backright = hwMap.get(DcMotor.class, "backright");
     }
 
-    public void turn(double power, long time, Auto1 auto1){
+    public void turn(double power, long time) throws InterruptedException {
         backleft.setPower(-power);
         backright.setPower(power);
         topleft.setPower(power);
         topright.setPower(-power);
         //how long it waits
-        auto1.sleep(time);
+        sleep(time);
 
     }
 
@@ -36,13 +38,13 @@ public class Drive2 {
 
     }
 
-    public void moveforward(double power, long time, Auto1 auto1){
+    public void moveforward(double power, long time) throws InterruptedException {
         backleft.setPower(-power);
         backright.setPower(-power);
         topleft.setPower(power);
         topright.setPower(power);
         //how long it waits
-        auto1.sleep(time);
+        sleep(time);
 
     }
 }
