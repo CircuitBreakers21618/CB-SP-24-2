@@ -21,8 +21,9 @@ goes forward 245 mm
 turns 90 left
 goes backwards 11 mm
  */
-    Drive2 driveAuto = new Drive2();
+
     //calls instilization of motors and servos
+    Drive2 driveAuto = new Drive2();
 
     int forwardSpeed = 1;
     int backwardSpeed = -1;
@@ -39,20 +40,20 @@ goes backwards 11 mm
     @Override
     public void runOpMode() throws InterruptedException {
 
-        driveAuto.init(hardwareMap);
         //geting hardwareMap
+        driveAuto.init(hardwareMap);
         waitForStart();
 
         driveAuto.moveforward(forwardSpeed, startTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.turn(forwardSpeed, firstTurnTime);
+        driveAuto.RightTurn(forwardSpeed, firstTurnTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
         driveAuto.moveforward(forwardSpeed, howFarSideways);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.turn(backwardSpeed, secondTurnTime);
+        driveAuto.LeftTurn(forwardSpeed, secondTurnTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
         driveAuto.moveforward(backwardSpeed, backwardTime);

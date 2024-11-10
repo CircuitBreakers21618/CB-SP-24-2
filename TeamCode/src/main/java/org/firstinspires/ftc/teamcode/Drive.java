@@ -8,18 +8,18 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 //naming it
 public class Drive extends OpMode {
 
+    //calls instilization of motors and servos
     Drive2 driveteleop = new Drive2();
     LineraMecanizme LineraMecanizmeteleop = new LineraMecanizme();
-    //calls instilization of motors and servos
 
 
 
     @Override
     public void init() {
 
+        //calling hardwareMap
         driveteleop.init(hardwareMap);
         LineraMecanizmeteleop.init(hardwareMap);
-        //calling hardwareMap
 
 
     }

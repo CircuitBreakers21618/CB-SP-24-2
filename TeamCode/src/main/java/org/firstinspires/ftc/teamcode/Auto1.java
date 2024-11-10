@@ -47,13 +47,13 @@ goes backwards 10.5 mm
         driveAuto.moveforward(forwardSpeed, startTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.turn(forwardSpeed, firstTurnTime);
+        driveAuto.RightTurn(forwardSpeed, firstTurnTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
         driveAuto.moveforward(forwardSpeed, howFarSideways);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.turn(backwardSpeed, secondTurnTime);
+        driveAuto.LeftTurn(forwardSpeed, secondTurnTime);
         driveAuto.stopmotor();
         driveAuto.moveforward(backwardSpeed, backwardTime);
         driveAuto.stopmotor();

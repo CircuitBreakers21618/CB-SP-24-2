@@ -20,11 +20,21 @@ public class Drive2 {
         backright = hwMap.get(DcMotor.class, "backright");
     }
 
-    public void turn(double power, long time) throws InterruptedException {
+    public void RightTurn(double power, long time) throws InterruptedException {
         backleft.setPower(-power);
         backright.setPower(power);
         topleft.setPower(power);
         topright.setPower(-power);
+        //how long it waits
+        sleep(time);
+
+    }
+
+    public void LeftTurn(double power, long time) throws InterruptedException {
+        backleft.setPower(power);
+        backright.setPower(-power);
+        topleft.setPower(-power);
+        topright.setPower(power);
         //how long it waits
         sleep(time);
 
