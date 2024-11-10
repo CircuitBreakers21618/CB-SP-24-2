@@ -25,6 +25,18 @@ goes backwards 10.5 mm
     //calls instilization of motors and servos
     Drive2 driveAuto = new Drive2();
 
+    int forwardSpeed = 1;
+    int backwardSpeed = -1;
+
+    //in milliseconds
+    int startTime = 220;
+    int firstTurnTime = 500;
+    int howFarSideways = 750;
+    int secondTurnTime = 300;
+    int backwardTime = 220;
+
+    int sleepTime = 10;
+
     @Override
     public void runOpMode() throws InterruptedException {
 
@@ -32,18 +44,18 @@ goes backwards 10.5 mm
         driveAuto.init(hardwareMap);
         waitForStart();
 
-        driveAuto.moveforward(1, 220);
+        driveAuto.moveforward(forwardSpeed, startTime);
         driveAuto.stopmotor();
-        sleep(10);
-        driveAuto.turn(1, 500);
+        sleep(sleepTime);
+        driveAuto.turn(forwardSpeed, firstTurnTime);
         driveAuto.stopmotor();
-        sleep(10);
-        driveAuto.moveforward(1, 750);
+        sleep(sleepTime);
+        driveAuto.moveforward(forwardSpeed, howFarSideways);
         driveAuto.stopmotor();
-        sleep(10);
-        driveAuto.turn(-1, 300);
+        sleep(sleepTime);
+        driveAuto.turn(backwardSpeed, secondTurnTime);
         driveAuto.stopmotor();
-        driveAuto.moveforward(-1, 220);
+        driveAuto.moveforward(backwardSpeed, backwardTime);
         driveAuto.stopmotor();
     }
 }
