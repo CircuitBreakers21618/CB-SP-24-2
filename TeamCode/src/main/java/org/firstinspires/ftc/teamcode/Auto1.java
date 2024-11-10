@@ -5,67 +5,45 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @Autonomous(name = "SP Auto1", group = "2024-25 SP")
 public class Auto1 extends LinearOpMode {
+/*
+Bryce
+11/10/2024
 
-    Drive2 driveAuto = new Drive2();
+This code is for starting spot number 1 and ending spot 1
+
+Starting spot 1 is closest to observation zone
+ending spot 1 is closest to corner of field
+
+Drives forward 10.5 mm
+turns 90 degrees right
+goes forward 62 mm
+turns 90 left
+goes backwards 10.5 mm
+ */
+
+
     //calls instilization of motors and servos
+    Drive2 driveAuto = new Drive2();
     @Override
     public void runOpMode() throws InterruptedException {
 
-        driveAuto.init(hardwareMap);
         //geting hardwareMap
+        driveAuto.init(hardwareMap);
         waitForStart();
 
-        moveforward(1, 220);
-        stopmotor();
+        driveAuto.moveforward(1, 220, this);
+        driveAuto.stopmotor();
         sleep(10);
-        turn(1, 500);
-        stopmotor();
+        driveAuto.turn(1, 500, this);
+        driveAuto.stopmotor();
         sleep(10);
-        moveforward(1, 750);
-        stopmotor();
+        driveAuto.moveforward(1, 750, this);
+        driveAuto.stopmotor();
         sleep(10);
-        turn(-1, 300);
-        stopmotor();
-        moveforward(-1, 220);
-        stopmotor();
-    }
-
-    public void moveforward(double power, long time){
-        driveAuto.backleft.setPower(-power);
-        driveAuto.backright.setPower(-power);
-        driveAuto.topleft.setPower(power);
-        driveAuto.topright.setPower(power);
-        //how long it waits
-        sleep(time);
-
-    }
-
-    public void straif(double power, long time){
-        driveAuto.backleft.setPower(power);
-        driveAuto.backright.setPower(-power);
-        driveAuto.topleft.setPower(-power);
-        driveAuto.topright.setPower(power);
-        //how long it waits
-        sleep(time);
-
-    }
-
-
-    public void stopmotor(){
-        driveAuto.backleft.setPower(0);
-        driveAuto.backright.setPower(0);
-        driveAuto.topleft.setPower(0);
-        driveAuto.topright.setPower(0);
-
-    }
-    public void turn(double power, long time){
-        driveAuto.backleft.setPower(-power);
-        driveAuto.backright.setPower(power);
-        driveAuto.topleft.setPower(power);
-        driveAuto.topright.setPower(-power);
-        //how long it waits
-        sleep(time);
-
+        driveAuto.turn(-1, 300, this);
+        driveAuto.stopmotor();
+        driveAuto.moveforward(-1, 220, this);
+        driveAuto.stopmotor();
     }
 }
 

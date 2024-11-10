@@ -43,15 +43,15 @@ public class Auto2 extends LinearOpMode {
 
     }
 
-    public void straif(double power, long time){
-        driveAuto.backleft.setPower(power);
-        driveAuto.backright.setPower(-power);
-        driveAuto.topleft.setPower(-power);
-        driveAuto.topright.setPower(power);
-        //how long it waits
-        sleep(time);
-
-    }
+//    public void straif(double power, long time){
+//        driveAuto.backleft.setPower(power);
+//        driveAuto.backright.setPower(-power);
+//        driveAuto.topleft.setPower(-power);
+//        driveAuto.topright.setPower(power);
+//        //how long it waits
+//        sleep(time);
+//
+//    }
 
 
     public void stopmotor(){

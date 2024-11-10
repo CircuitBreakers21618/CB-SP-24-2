@@ -17,4 +17,32 @@ public class Drive2 {
         backleft = hwMap.get(DcMotor.class, "backleft");
         backright = hwMap.get(DcMotor.class, "backright");
     }
+
+    public void turn(double power, long time, Auto1 auto1){
+        backleft.setPower(-power);
+        backright.setPower(power);
+        topleft.setPower(power);
+        topright.setPower(-power);
+        //how long it waits
+        auto1.sleep(time);
+
+    }
+
+    public void stopmotor(){
+        backleft.setPower(0);
+        backright.setPower(0);
+        topleft.setPower(0);
+        topright.setPower(0);
+
+    }
+
+    public void moveforward(double power, long time, Auto1 auto1){
+        backleft.setPower(-power);
+        backright.setPower(-power);
+        topleft.setPower(power);
+        topright.setPower(power);
+        //how long it waits
+        auto1.sleep(time);
+
+    }
 }
