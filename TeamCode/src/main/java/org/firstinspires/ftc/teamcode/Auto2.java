@@ -23,15 +23,15 @@ goes backwards 11 mm
 
     //calls instilization of motors and servos
     Drive2 driveAuto = new Drive2();
-    int forwardSpeed = 1;
-    int backwardSpeed = -1;
+    double forwardSpeed = .5;
+    double backwardSpeed = -.5;
 
     //in milliseconds
-    int startTime = 220;
-    int firstTurnTime = 500;
-    int howFarSideways = 1700;
-    int secondTurnTime = 375;
-    int backwardTime = 220;
+    int startTime = 440;
+    int firstTurnTime = 1000;
+    int howFarSideways = 3650;
+    int secondTurnTime = 950;
+    int backwardTime = 440;
 
     int sleepTime = 10;
 
