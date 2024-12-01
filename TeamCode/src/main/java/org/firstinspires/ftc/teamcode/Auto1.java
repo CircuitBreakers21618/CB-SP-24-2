@@ -30,9 +30,9 @@ goes backwards 10.5 mm
 
     //in milliseconds
     int startTime = 300;
-    int firstTurnTime = 750;
-    int howFarSideways = 1500;
-    int secondTurnTime = 500;
+    int firstTurnTime = 1000;
+    int howFarSideways = 2150;
+    int secondTurnTime = 1000;
     int backwardTime = 300;
 
     int sleepTime = 10;
