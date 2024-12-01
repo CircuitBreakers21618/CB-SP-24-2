@@ -4,15 +4,17 @@
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+ import com.qualcomm.robotcore.hardware.Servo;
 
 
-@TeleOp(name ="teleop", group = "2024-25 SP")
+ @TeleOp(name ="teleop", group = "2024-25 SP")
 //naming it
 public class Drive extends OpMode {
 
     //calls instilization of motors and servos
     Drive2 driveteleop = new Drive2();
     LineraMecanizme LineraMecanizmeteleop = new LineraMecanizme();
+
 
 
 
@@ -37,13 +39,13 @@ public class Drive extends OpMode {
 
         LineraMecanizmeteleop.Intake.setPower(gamepad2.left_stick_y);
 
-        if (gamepad2.a){
-            LineraMecanizmeteleop.arm.setPower(1);
+        if (gamepad2.y){
+            LineraMecanizmeteleop.arm.setPosition(1);
             
         }
 
-        if (gamepad2.b){
-            LineraMecanizmeteleop.arm.setPower(-1);
+        if (gamepad2.a){
+            LineraMecanizmeteleop.arm.setPosition(.42);
 
         }
 
