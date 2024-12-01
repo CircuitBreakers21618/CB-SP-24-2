@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @Autonomous(name = "SP Auto3", group = "2024-25 SP")
-public class Auto3 extends LinearOpMode {
+public class blockcode1 extends LinearOpMode {
 
     /*
 Bryce
@@ -29,11 +29,14 @@ goes backwards 11 mm
     double backwardSpeed = -.5;
 
     //in milliseconds
-    int startTime = 440;
+    int startTime = 460;
+    int firstBackwardTime = 460;
     int firstTurnTime = 1000;
-    int howFarSideways = 2520;
+    int howFarForward = ;
     int secondTurnTime = 1000;
-    int backwardTime = 440;
+    int howFarSideways = 2520;
+    int thirdTurnTime = 1000;
+    int secondBackwardTime = 440;
 
     int sleepTime = 10;
 
@@ -47,16 +50,25 @@ goes backwards 11 mm
         driveAuto.moveforward(forwardSpeed, startTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
+        driveAuto.moveforward(backwardSpeed, firstBackwardTime);
+        driveAuto.stopmotor();
+        sleep(sleepTime);
         driveAuto.RightTurn(forwardSpeed, firstTurnTime);
+        driveAuto.stopmotor();
+        sleep(sleepTime);
+        driveAuto.moveforward(forwardSpeed, howFarForward);
+        driveAuto.stopmotor();
+        sleep(sleepTime);
+        driveAuto.RightTurn(forwardSpeed, secondTurnTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
         driveAuto.moveforward(forwardSpeed, howFarSideways);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.LeftTurn(forwardSpeed, secondTurnTime);
+        driveAuto.LeftTurn(forwardSpeed, thirdTurnTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
-        driveAuto.moveforward(backwardSpeed, backwardTime);
+        driveAuto.moveforward(backwardSpeed, secondBackwardTime);
         driveAuto.stopmotor();
 
 
