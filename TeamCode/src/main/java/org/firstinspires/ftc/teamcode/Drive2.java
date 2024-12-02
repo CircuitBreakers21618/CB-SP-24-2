@@ -29,6 +29,15 @@ public class Drive2 {
         sleep(time);
 
     }
+    public void strafe(double power, long time) throws InterruptedException {
+        backleft.setPower(-power);
+        backright.setPower(power);
+        topleft.setPower(-power);
+        topright.setPower(power);
+        //how long it waits
+        sleep(time);
+
+    }
 
     public void LeftTurn(double power, long time) throws InterruptedException {
         backleft.setPower(power);

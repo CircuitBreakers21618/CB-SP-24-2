@@ -24,7 +24,7 @@ goes backwards 10.5 mm
 
     //calls instilization of motors and servos
     Drive2 driveAuto = new Drive2();
-
+    LineraMecanizme LineraMecanizmeteleop = new LineraMecanizme();
     double forwardSpeed = 0.5;
     double backwardSpeed = -0.5;
 
@@ -36,14 +36,17 @@ goes backwards 10.5 mm
     int backwardTime = 300;
 
     int sleepTime = 10;
+    int sleepArm = 1000;
 
     @Override
     public void runOpMode() throws InterruptedException {
 
         //geting hardwareMap
         driveAuto.init(hardwareMap);
+        LineraMecanizmeteleop.init(hardwareMap);
         waitForStart();
 
+        LineraMecanizmeteleop.arm.setPosition(1);
         driveAuto.moveforward(forwardSpeed, startTime);
         driveAuto.stopmotor();
         sleep(sleepTime);
@@ -57,6 +60,8 @@ goes backwards 10.5 mm
         driveAuto.stopmotor();
         driveAuto.moveforward(backwardSpeed, backwardTime);
         driveAuto.stopmotor();
+        LineraMecanizmeteleop.arm.setPosition(1);
+        sleep(sleepArm);
     }
 }
 
